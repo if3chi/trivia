@@ -14,11 +14,11 @@ class Quiz {
     }
   ];
 
-  String question(int index) => _checkList(index)
+  String question(int index) => hasMoreQtns(index)
       ? _questionsList[index]['question'].toString()
       : 'End of Quiz';
   List answers(int index) =>
-      _checkList(index) ? _questionsList[index]['answer'] as List : [];
+      hasMoreQtns(index) ? _questionsList[index]['answer'] as List : [];
 
-  bool _checkList(int index) => index < _questionsList.length;
+  bool hasMoreQtns(int index) => index < _questionsList.length;
 }

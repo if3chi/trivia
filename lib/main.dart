@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:my_trivia/screens/trivia_home.dart';
 
 void main() => runApp(const Trivia());

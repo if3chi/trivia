@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:my_trivia/res/quiz.dart';
+import 'package:my_trivia/props/result.dart';
 import 'package:my_trivia/props/question.dart';
-import 'package:my_trivia/props/answer_button.dart';
 
 class TriviaHome extends StatefulWidget {
   const TriviaHome({Key? key}) : super(key: key);
@@ -21,27 +21,26 @@ class TriviaHomeState extends State<TriviaHome> {
     });
   }
 
+  void resetQuiz() {
+    setState(() {
+      questionIndex = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(32.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Question(question: quiz.question(questionIndex)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ...quiz.answers(questionIndex).map(
-                    (answer) => AnswerButton(
-                      answerText: answer,
-                      ansQuestion: ansQuestion,
-                    ),
-                  ),
-            ],
-          )
-        ],
-      ),
+      child: quiz.hasMoreQtns(questionIndex)
+          ? Question(
+              question: quiz.question(questionIndex),
+              answers: quiz.answers(questionIndex),
+              choice: ansQuestion,
+            )
+          : Result(
+              resetQuiz: resetQuiz,
+              result: 30,
+            ),
     );
   }
 }
