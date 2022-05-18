@@ -13,18 +13,35 @@ class TriviaHome extends StatefulWidget {
 
 class TriviaHomeState extends State<TriviaHome> {
   Quiz quiz = Quiz();
+  int highScore = 0;
+  int totalScore = 0;
   int questionIndex = 0;
 
-  void ansQuestion() {
+  void ansQuestion(int score) {
     setState(() {
+      totalScore += score;
       questionIndex += 1;
     });
   }
 
   void resetQuiz() {
     setState(() {
-      questionIndex = 0;
+      if (highScore < totalScore) highScore = totalScore;
+      setValues();
     });
+  }
+
+  void clearGameRecords() {
+    setState(() {
+      highScore = 0;
+      setValues();
+    });
+  }
+
+  void setValues() {
+    totalScore = 0;
+    questionIndex = 0;
+    quiz.shuffleList();
   }
 
   @override
@@ -38,8 +55,10 @@ class TriviaHomeState extends State<TriviaHome> {
               choice: ansQuestion,
             )
           : Result(
+              result: totalScore,
+              highScore: highScore,
               resetQuiz: resetQuiz,
-              result: 30,
+              clearScores: clearGameRecords,
             ),
     );
   }

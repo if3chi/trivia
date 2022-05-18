@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MainText extends StatelessWidget {
+class HeaderText extends StatelessWidget {
   final String text;
 
-  const MainText({
+  const HeaderText({
     Key? key,
     required this.text,
   }) : super(key: key);
