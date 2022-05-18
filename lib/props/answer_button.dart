@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AnswerButton extends StatelessWidget {
+  final String answerText;
   final VoidCallback ansQuestion;
-  final String option;
 
   const AnswerButton(
-      {Key? key, required this.option, required this.ansQuestion})
+      {Key? key, required this.answerText, required this.ansQuestion})
       : super(key: key);
 
   @override
@@ -15,7 +15,7 @@ class AnswerButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: ansQuestion,
         child: Text(
-          option,
+          answerText,
           strutStyle: const StrutStyle(
             fontSize: 12,
             fontWeight: FontWeight.w400,
