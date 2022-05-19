@@ -17,6 +17,20 @@ class Result extends StatelessWidget {
     required this.clearScores,
   }) : super(key: key);
 
+  String get remarks {
+    String remark;
+
+    if (result > highScore && result >= 40) {
+      remark = 'You are smart, you beat the highscore.';
+    } else if (result >= 30) {
+      remark = 'You are an average smart person.';
+    } else {
+      remark = 'You DuuuummmmmmmmmmB!';
+    }
+
+    return remark;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -25,6 +39,14 @@ class Result extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ...highScoreText(),
+          Text(
+            remarks,
+            style: const TextStyle(
+              color: Colors.indigo,
+              fontSize: 14.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           AnswerButton(
             answerText: 'Reset Quiz',
             ansQuestion: resetQuiz,
