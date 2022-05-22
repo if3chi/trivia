@@ -11,6 +11,31 @@ class Quiz {
       ],
     },
     {
+      'question': 'What is the nearest planet to the sun?',
+      'answer': [
+        {'text': 'Mecury', 'score': 10},
+        {'text': 'Mars', 'score': 0},
+        {'text': 'Pluto', 'score': 0}
+      ],
+    },
+    {
+      'question': 'How many teeth does an adult human have?',
+      'answer': [
+        {'text': '24', 'score': 10},
+        {'text': '40', 'score': 0},
+        {'text': '32', 'score': 10}
+      ],
+    },
+    {
+      'question':
+          'In the state of Georgia, it’s illegal to eat what with a fork?',
+      'answer': [
+        {'text': 'Grilled Chicken', 'score': 0},
+        {'text': 'Dog meat', 'score': 0},
+        {'text': 'Fried chicken', 'score': 10}
+      ]
+    },
+    {
       'question': 'What geometric shape is generally used for stop signs?',
       'answer': [
         {'text': 'Square', 'score': 0},
