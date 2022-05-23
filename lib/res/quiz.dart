@@ -61,6 +61,32 @@ class Quiz {
       ]
     },
     {
+      'question':
+          'What is the name of the biggest technology company in South Korea?',
+      'answer': [
+        {'text': 'Samyang Optics', 'score': 0},
+        {'text': 'Samsung', 'score': 10},
+        {'text': 'LG', 'score': 0},
+      ]
+    },
+    {
+      'question':
+          'Which monarch officially made Valentine\'s Day a holiday in 1537?',
+      'answer': [
+        {'text': 'Henry III', 'score': 0},
+        {'text': 'Henry VIII', 'score': 10},
+        {'text': 'Henry XI', 'score': 0},
+      ]
+    },
+    {
+      'question': 'What was the first soft drink in space?',
+      'answer': [
+        {'text': 'Fanta', 'score': 0},
+        {'text': 'Coca Cola', 'score': 10},
+        {'text': 'Sprite', 'score': 0},
+      ]
+    },
+    {
       'question': 'In what type of matter are atoms most tightly packed?',
       'answer': [
         {'text': 'Gas', 'score': 0},
